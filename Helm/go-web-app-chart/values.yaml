@@ -1,0 +1,18 @@
+replicaCount: 1
+
+image: 
+  repository: ahishekf5/go-web-app
+  pullPolicy: IfNotPresent
+  tag: "v2"
+
+ingress:
+  enabled: false
+  className: ""
+  annotations:
+    # kuberenetes.io/ingress.class: nginx
+    # kuberenes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          paathType: ImplementationSpecific
